@@ -1,13 +1,14 @@
 <div class="well">
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="playlistForm">
         <fieldset>
             <legend>New Playlist</legend>
             <div class="form-group">
                 <label class="col-xs-2 control-label">Title</label>
                 <div class="col-xs-10">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" ng-model="playlist.name" />
                 </div>
             </div>
+            <pre>{{ playlist | json }}</pre>
             <div class="form-group">
                 <div class="col-xs-10 col-xs-offset-2">
                     <button type="submit" class="btn btn-success">Create Playlist</button>
