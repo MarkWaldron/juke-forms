@@ -1,5 +1,12 @@
-app.factory('SongFactory', function () {
+app.factory('SongFactory', function ($http) {
 	var SongFactory = {};
+	SongFactory.fetchAll = function(){
+		return $http.get('/api/songs')
+		.then(function (response) {
+			return response.data;
+		})
+	}
+
 	SongFactory.convert = function (raw, artistObjs) {
 		if (typeof artistObjs == 'object') {
 			var artistsById = _.indexBy(artistObjs, '_id');

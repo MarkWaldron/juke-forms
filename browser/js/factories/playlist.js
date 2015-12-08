@@ -28,5 +28,14 @@ app.factory('PlaylistFactory', function ($http) {
     });
   };
 
+  PlaylistFactory.addSong = function(data){
+    console.log('furkkkkkkk');
+    return $http.post('/api/playlists/:playlistId/songs', data)
+    .then(function (response){
+      console.log(response);
+
+    })
+  }
+
   return PlaylistFactory
 });

@@ -10,6 +10,11 @@
             </tr>
         </thead>
         <tbody>
+          Song:
+          <div class="form-group" ng-submit="addSong()">
+            <select class="form-control" ng-options="song.name for song in allSongs" ng-model="selected"></select>
+            <button class="btn btn-success" type="submit">Add Song</button>
+          </div>
             <tr ng-repeat="song in playlist.songs" ng-class="{active: isCurrent(song)}">
                 <td>
                     <button ng-hide="isCurrent(song)" ng-click="start(song)" class="btn btn-default btn-xs">
